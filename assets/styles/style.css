@@ -1,0 +1,150 @@
+
+.bs-example{
+    margin: 20px;
+}
+body {
+    padding-top: 80px;
+    /*background-color: bisque;*/
+    background: url('../files/7.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.iconsAction {
+    width: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#qrcodeCanvas {
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+.glyphicon glyphicon-ok {
+    width:50px;
+    height: 50px;
+}
+#SignOK, #SignKO {
+    border-style:solid;
+    border-width: 1px;
+    border-color:black;
+}
+#SignOK {
+    color:limegreen;
+}
+#SignKO {
+    color:white;
+}
+
+#liste{
+    background-color: white;
+}
+
+#titre {
+    padding-left: 20px;
+}
+#promoSeance{
+    padding-left: 35px;
+}
+#seanceAttr{
+    padding-left: 70px;
+}
+
+
+.navbar-custom {
+    background-color: #005a4b;
+    border-color: #049283;
+}
+.navbar-custom .navbar-brand {
+    color: #ecf0f1;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+    color: #ffffff;
+}
+.navbar-custom .navbar-text {
+    color: #ecf0f1;
+}
+.navbar-custom .navbar-nav > li > a {
+    color: #ecf0f1;
+}
+.navbar-custom .navbar-nav > li > a:active,
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+    color: #049283;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #049283;
+}
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: #049283;
+}
+.navbar-custom .navbar-toggle {
+    border-color: #049283;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+    background-color: #049283;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+    background-color: #049283;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+    border-color: #ecf0f1;
+}
+.navbar-custom .navbar-link {
+    color: #ecf0f1;
+}
+.navbar-custom .navbar-link:hover {
+    color: #049283;
+}
+
+@media (max-width: 767px) {
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+        background-color: #049283;
+        color: #ecf0f1;
+    }
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+        background-color: #049283;
+        color: #ecdbff;
+    }
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #ecdbff;
+        background-color: #049283;
+    }
+}
+
+#SignOKTrombinoscope{
+    border: 7px solid #76d04b;
+}
+#SignKOTrombinoscope{
+    border: 7px solid #ff3333;
+}
+.image-cropper {
+    overflow:hidden;
+    width: 140px;
+    height: 140px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#seanceInvalideAjrd {
+    border: 1px solid red;
+}
+
+#seanceValideAjrd {
+    border: 1px solid green;
+}

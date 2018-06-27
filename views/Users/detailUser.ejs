@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <title>Détail Utilisateur</title>
+    <% include ../layout %>
+</head>
+
+<body>
+<% include ../Menu %>
+    <div class="container">
+        <div align="center">
+            <h1><span class="fa fa-sign-in"></span>Modifier l'Utilisateur</h1>
+        </div>
+
+        <div class="col-sm-3 col-md-3">
+            <img src="/files/imgProfileUsers/<%= user[0].imageProfileU %>" style="width:50%"></img><br>
+
+                <form ref='uploadForm'
+                      id='uploadForm'
+                      action='http://qrcode.guillaumeperes.fr/admin/upload/<%= user[0].id%>&<%= user[0].nomU %>_<%= user[0].prenomU %>_<%= user[0].promotionU %>'
+                      method='post'
+                      encType="multipart/form-data">
+                    <input type="file" name="sampleFile"/><br>
+                    <input type='submit' value='Enregistrer' class="btn btn-primary btn-sm" />
+                </form>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <form id="form" name="usermodif">
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" class="form-control" name="nom" value="<%=(user[0].nomU.toUpperCase())%>" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                    <label>Prénom</label>
+                    <input type="text" class="form-control" name="prenom" value="<%=(user[0].prenomU)%>" maxlength="50" required>
+                </div>
+                <div class="form-group">
+                    <label>Mail</label>
+                    <input type="email" class="form-control" name="mail" value="<%=(user[0].mailU)%>" maxlength="100" required>
+                </div>
+                <% if((user[0].roleU)=='ETUDIANT') { %>
+                <div class="form-group">
+                    <label>Promotion</label>
+                    <select name="promotion">
+                        <% for(var i=0; i<promos.length; i++) {%>
+                        <option value="<%=promos[i].idP%>" <% if(promos[i].idP==user[0].promotionU) { %> selected="selected" <% } %> ><%=promos[i].nomP%></option>
+                        <% } %>
+                    </select>
+                </div>
+                <% } %>
+
+                <div class="pull-right">
+                    <a href="/<%= chemin %>" class="btn btn-secondary btn-lg">Annuler</a>
+                    <a class="btn btn-primary btn-lg" onclick="formUserOK('<%= user[0].id %>', '<%= chemin %>')">Appliquer</a>
+                    <a id="redirection" href="/<%= chemin %>"></a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

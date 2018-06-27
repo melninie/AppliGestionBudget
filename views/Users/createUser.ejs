@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Création Utilisateur</title>
+        <% include ../layout %>
+    </head>
+    <body>
+    <% include ../Menu %>
+        <div class="container">
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <h1>Utilisateur</h1>
+
+                <form ref='uploadForm'
+                      id='uploadForm'
+                      action='http://qrcode.guillaumeperes.fr/admin/createUser%>'
+                      method='post'
+                      encType="multipart/form-data">
+                    <div class="form-group">
+                        <label>Nom :</label>
+                        <input type="text" class="form-control" name="nom" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Prénom :</label>
+                        <input type="text" class="form-control" name="prenom" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mail :</label>
+                        <input type="email" class="form-control" name="mail" maxlength="100" required>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Rôle :</label>
+                        <select id="role" name="role" onchange="CachePromo()">
+                            <option value="ETUDIANT">ETUDIANT</option>
+                            <option value="ENSEIGNANT">ENSEIGNANT</option>
+                            <option value="ADMINISTRATION">ADMINISTRATION</option>
+                        </select>
+                    </div>
+                    <div id="promovisible" class="form-group">
+                        <label>Promotion :</label>
+                        <select name="promotion">
+                            <% for(var i=0; i<promos.length; i++) { %>
+                            <option value="<%=promos[i].idP%>" ><%=promos[i].nomP%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <input type="hidden" name="password" value="1234">
+
+                    <div>
+                        <input type="file" name="sampleFile"/><br>
+                    </div>
+
+                    <div class="pull-right">
+                        <a href="<%= chemin %>" class="btn btn-secondary btn-lg">Annuler</a>
+                        <button type="submit" class="btn btn-success btn-lg">Créer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
