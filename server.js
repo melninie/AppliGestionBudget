@@ -47,8 +47,11 @@ app.use('/enseignant', require('./app/Routes/enseignantRoutes.js'));
 /*
 app.use('/cron', require('./app/Routes/cronRoutes.js'));
 */
+var bcrypt = require('bcrypt-nodejs');
+var tete = bcrypt.hashSync('test', null, null);
+console.log("Hello, World!");console.log(tete);
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 8080);
 
 console.log('LASDTTv 13254');
 console.log('The magic happens on port ' + port);
