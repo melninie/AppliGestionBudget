@@ -38,7 +38,7 @@ module.exports = function(app, passport) {
 				var returnTo = "admin/";
 				break;
 		}
-        res.status(200).redirect(returnTo);
+        res.status(200).redirect(/*returnTo*/"admin/");
     });
 
 	app.get('/admin/users/create', function(req, res, next){ CheckLog(req, res, next, "ADMINISTRATION");}, function(req, res) {
