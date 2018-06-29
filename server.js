@@ -48,6 +48,6 @@ app.use('/enseignant', require('./app/Routes/enseignantRoutes.js'));
 app.use('/cron', require('./app/Routes/cronRoutes.js'));
 */
 
-app.listen(port);
+app.listen(4567);
 console.log('LASDTT');
 console.log('The magic happens on port ' + port);
