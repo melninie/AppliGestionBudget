@@ -10,7 +10,8 @@ var connection=mysql.createConnection({
     user:'root',
     database:'myaccount',
     multipleStatements:true*/
-    host: 'mysql://172.30.100.141:3306/',
+    host: '172.30.100.141',
+    port: '3306',
     user: 'myaccount',
     password: 'myaccount',
     database: 'myaccount_db',
