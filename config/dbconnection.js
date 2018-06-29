@@ -4,7 +4,7 @@
 var mysql=require('mysql');
 var express = require('express')
 var app = express();
-
+console.log('test console log');
 var connection=mysql.createConnection({
     host:'mysql-myaccount.alwaysdata.net',
     port:'3306',
