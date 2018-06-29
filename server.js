@@ -13,7 +13,7 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 // connection à la base de données;
-require('./config/passport')(passport); // pass passport for configuration
+//require('./config/passport')(passport); // pass passport for configuration
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -49,4 +49,5 @@ app.use('/cron', require('./app/Routes/cronRoutes.js'));
 */
 
 app.listen(port);
+console.log('last commit test');
 console.log('The magic happens on port ' + port);
