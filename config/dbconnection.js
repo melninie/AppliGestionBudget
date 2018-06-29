@@ -6,9 +6,13 @@ var express = require('express')
 var app = express();
 
 var connection=mysql.createConnection({
-    host:'localhost',
+    /*host:'localhost',
     user:'root',
     database:'myaccount',
-    multipleStatements:true
+    multipleStatements:true*/
+    host: 'mysql://172.30.100.141:3306/',
+    user: 'myaccount',
+    password: 'myaccount',
+    database: 'myaccount_db',
 });
 module.exports = connection;
