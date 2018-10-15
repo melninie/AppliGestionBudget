@@ -5,15 +5,9 @@ var mysql=require('mysql');
 var express = require('express')
 var app = express();
 var connection=mysql.createConnection({
-    host:'sql7.freemysqlhosting.net',
-    port:'3306',
-    user:'sql7245241',
-    password:'c6ff2qPJPa',
-    database:'sql7245241',
-   /* host:'127.0.0.1',
-    user:'myaccount',
-    password:'myaccount',
-    database:'myaccount_test',*/
+    host:'127.0.0.1',
+    user:'root',
+    database:'myaccount',
     multipleStatements:true
 });
 

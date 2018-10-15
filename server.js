@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
-var CronJob = require('cron').CronJob;
+// var CronJob = require('cron').CronJob;
 
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
@@ -48,10 +48,6 @@ app.use('/enseignant', require('./app/Routes/enseignantRoutes.js'));
 app.use('/cron', require('./app/Routes/cronRoutes.js'));
 */
 var bcrypt = require('bcrypt-nodejs');
-var tete = bcrypt.hashSync('test', null, null);
-console.log("Hello, World!");console.log(tete);
 
 app.listen(process.env.PORT || 8080);
-
-console.log('LASDTTv 13254');
 console.log('The magic happens on port ' + port);
