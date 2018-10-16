@@ -11,5 +11,4 @@ var connection=mysql.createConnection({
     multipleStatements:true
 });
 
-console.log('test console log after all');
 module.exports = connection;

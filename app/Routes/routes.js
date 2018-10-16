@@ -26,19 +26,7 @@ module.exports = function(app, passport) {
 
     // après envoi du formulaire login, redirectByRole redirige le profil actif vers la page correposdant à son role
     app.get('/redirectByRole', function(req, res) {
-
-    	switch(req.user.roleU){
-			case "ETUDIANT":
-				var returnTo = "etudiant/profile";
-				break;
-			case "ENSEIGNANT":
-				var returnTo = "enseignant/seance";
-				break;
-			case "ADMINISTRATION":
-				var returnTo = "admin/";
-				break;
-		}
-        res.status(200).redirect(/*returnTo*/"admin/");
+        res.status(200).redirect("admin/");
     });
 
 	app.get('/admin/users/create', function(req, res, next){ CheckLog(req, res, next, "ADMINISTRATION");}, function(req, res) {
@@ -71,7 +59,7 @@ module.exports = function(app, passport) {
     // =====================================
     // ADMIN ===============================
     // =====================================
-    app.get('/admin',function(req, res, next){ CheckLog(req, res, next, "ADMINISTRATION");}, function (req, res){
+    app.get('/admin',function (req, res){
         res.status(200).render('admin.ejs', {page_title:"Administration"});
     });
 
