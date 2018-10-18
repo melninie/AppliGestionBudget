@@ -120,24 +120,24 @@
                         <!-- The user image in the navbar-->
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
                         <span><i class="far fa-user"></i></span>
-                        <span class="hidden-xs"> &nbsp;Alexander Pierce</span>
+                        <span class="hidden-xs"> &nbsp;<%= user.prenomU %> <%= user.nomU %></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
 
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                <%= user.prenomU %> <%= user.nomU %>
+                                <small>Membre depuis ??????</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profil</a>
+                                <a href="/profil" class="btn btn-default btn-flat">Profil</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Déconnexion</a>
+                                <a href="/logout" class="btn btn-default btn-flat">Déconnexion</a>
                             </div>
                         </li>
                     </ul>
@@ -161,7 +161,7 @@
 
             <!-- A AFFICHER QUE SI UN COMPTE EST SELECTIONNE -->
             <li class="header">GÉNÉRAL</li>
-            <li class="active"><a href="#"><i class="fa fa-university"></i> <span>Mes comptes</span></a></li>
+            <li><a href="/mes-comptes"><i class="fa fa-university"></i> <span>Mes comptes</span></a></li>
             <li><a href="#"><i class="far fa-chart-bar"></i> <span> &nbsp;Statistiques globales</span></a></li>
 
 
@@ -182,3 +182,9 @@
     </section>
     <!-- /.sidebar -->
 </aside>
+
+<script>
+    $(document).ready(function() {
+        $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+    });
+</script>

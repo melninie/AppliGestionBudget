@@ -4,7 +4,7 @@ var Promo = require('../Models/promosModel');
 module.exports = function(app, passport) {
 
 	// =====================================
-	// PAGE ACCUEIL ========
+	// PAGE CONNEXION ========
 	// =====================================
 
 	app.get('/', function(req, res) {
@@ -15,6 +15,7 @@ module.exports = function(app, passport) {
 		res.status(200).render('login.ejs', { message: req.flash('loginMessage') });
 	});
 
+	// Connexion
 	app.post('/login', function(req, res) {
 		var returnTo = req.session.returnTo||'redirectByRole';
 		passport.authenticate('local-login', {
@@ -26,7 +27,7 @@ module.exports = function(app, passport) {
 
     // après envoi du formulaire login, redirectByRole redirige le profil actif vers la page correposdant à son role
     app.get('/redirectByRole', function(req, res) {
-        res.status(200).redirect("admin/");
+        res.status(200).redirect("mes-comptes");
     });
 
 	app.get('/admin/users/create', function(req, res, next){ CheckLog(req, res, next, "ADMINISTRATION");}, function(req, res) {
@@ -45,22 +46,18 @@ module.exports = function(app, passport) {
         });
 	});
 
-/*    app.post('/admin/users', passport.authenticate('local-signup', {
-		successRedirect : '/admin/users',
-		failureRedirect : '/admin/users/create',
-		failureFlash : true // allow flash messages
-	}));
-*/
-
-	app.get('/admin/profile', function(req, res, next){ CheckLog(req, res, next, "ADMINISTRATION");}, function(req, res) {
-		res.status(200).render('profile.ejs', { user : req.user });
+    // =====================================
+    // PROFIL ==============================
+    // =====================================
+	app.get('/profil', function(req, res, next){ CheckLog(req, res, next, "ADMINISTRATION");}, function(req, res) {
+		res.status(200).render('profil.ejs', { user : req.user });
 	});
 
     // =====================================
-    // ADMIN ===============================
+    // MES COMPTES =========================
     // =====================================
-    app.get('/admin',function (req, res){
-        res.status(200).render('admin.ejs', {page_title:"Administration"});
+    app.get('/mes-comptes', function(req, res, next){ CheckLog(req, res, next, "ADMINISTRATION");}, function(req, res) {
+        res.status(200).render('admin.ejs', {user : req.user});
     });
 
     // =====================================
